@@ -1,10 +1,13 @@
 .Logo {
     height: 40px;
+    margin-top: 3px;
 }
 
 @media (max-width: 800px) {
     .Logo {
+      height: 33px;
       max-width: 105px;
+      margin-top: 3px;
     }
   }
   
