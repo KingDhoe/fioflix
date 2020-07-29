@@ -11,9 +11,9 @@ function App() {
       <Menu />
 
       <BannerMain
-        videoTitle={dados_iniciais.categorias[0].videos[0].titulo}
+        videoTitle={<p>País do Futebol</p>}
         url={dados_iniciais.categorias[0].videos[0].url}
-        videoDescription={"O que é Front-end? Trabalhando na área os termos HTML, CSS e JavaScript fazem parte da rotina das desenvolvedoras e desenvolvedores. Mas o que eles fazem, afinal? Descubra com a Vanessa!"}
+        videoDescription={"O futebol é uma paixão mundial, conhecido como o esporte mais praticado no mundo todo. E quando se fala em futebol, o Brasil é o país mais apaixonado pelo esporte e o mais vitorioso nele, considerado, por isso, como o país do futebol."}
       />
 
       <Carousel
@@ -31,14 +31,6 @@ function App() {
 
       <Carousel
         category={dados_iniciais.categorias[3]}
-      />      
-
-      <Carousel
-        category={dados_iniciais.categorias[4]}
-      />      
-
-      <Carousel
-        category={dados_iniciais.categorias[5]}
       />      
 
       <Footer />
