@@ -10,12 +10,10 @@ function CadastroCategoria(){
         <form>
           <label>
             Nome da Categoria:
-            <input
-              type="text"
-            />
+            <input type="text" class="form-control" id="usr"/>
           </label>
 
-          <button>
+          <button class="btn btn-primary">
             Cadastrar
           </button>
         </form>
