@@ -1,109 +1,126 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PageDefault from '../../../components/PageDefault';
 import FormField from '../../../components/FormField';
+import Button from '../../../components/Button';
 
-function CadastroCategoria(){
+function CadastroCategoria() {
   const valoresIniciais = {
     nome: '',
     descricao: '',
     cor: '',
-  }
+  };
   const [categorias, setCategorias] = useState([]);
   const [values, setValues] = useState('valoresIniciais');
-  
+
   function setValue(chave, valor) {
-    
     setValues({
       ...values,
       [chave]: valor,
-    })
+    });
   }
 
-  function HandlerChange(infosDoEvento){
-    const { getAttribute, value } = infosDoEvento.target;
+  function HandlerChange(infosDoEvento) {
     setValue(
-      getAttribute('name'), 
-      value
+      infosDoEvento.target.getAttribute('name'),
+      infosDoEvento.target.value,
     );
   }
 
+  useEffect(() => {
+    const URL = 'http://localhost:8080/categorias';
+
+    fetch(URL)
+      .then(async (respostaDoServidor) => {
+        const resposta = await respostaDoServidor.json();
+        setCategorias([
+          ...resposta,
+        ]);
+      });
+
+    // setTimeout(() => {
+    //   setCategorias(() => [
+    //     ...categorias,
+    //     {
+    //       id: 1,
+    //       nome: 'Alemanha',
+    //       descricao: 'Bundesliga',
+    //       cor: 'cbd1ff',
+    //     },
+    //     {
+    //       id: 2,
+    //       nome: 'Portugal',
+    //       descricao: 'Português',
+    //       cor: 'cbd1ff',
+    //     },
+    //   ]);
+    // }, 4 * 1000);
+  }, []);
+
   return (
     <PageDefault>
-      <h1>Cadastro de Campeonatos: {values.nome}</h1>
+      <h1>
+        Cadastro de Campeonatos:
+        {values.nome}
+      </h1>
 
       <form onSubmit={function handleSubmit(infosDoEvento) {
         infosDoEvento.preventDefault();
         setCategorias([
           ...categorias,
-          values
+          values,
         ]);
 
         setValues(valoresIniciais);
-      }}>
-        <FormField 
-          label="Nome do Campeonato"
+      }}
+      >
+        <FormField
+          label="País"
           type="text"
           value={values.nome}
           name="nome"
           onChange={HandlerChange}
         />
 
-        <FormField 
-          label="Descrição"
+        <FormField
+          label="Nomde do Campeonato"
           type="textarea"
           value={values.descricao}
           name="descricao"
           onChange={HandlerChange}
         />
 
-        {/* <div>
-        <label>
-            Descrição:
-            <textarea 
-              type="text" 
-              value={values.descricao}
-              name="descricao"
-              onChange={HandlerChange}/>
-          </label>
-        </div> */}
-
-        <FormField 
-        label="Cor"
+        <FormField
+          label="Cor"
           type="color"
           value={values.cor}
           name="cor"
           onChange={HandlerChange}
         />
-        {/* <div>
-        <label>
-            Cor:
-            <input 
-              type="color" 
-              value={values.cor}
-              name="cor"
-              onChange={HandlerChange}/>
-          </label>
-        </div> */}
 
-        <button class="btn btn-primary" >
+        <Button>
           Cadastrar
-        </button>
+        </Button>
       </form>
+
+      {categorias.length === 0 && (
+        <div>
+          Loading...
+        </div>
+      )}
+
       <ul>
-        {categorias.map((categorias) => {
-          return (
-            <li key={categorias}>
-              {categorias.nome}
-            </li>
-          )
-        }) }
+        {categorias.map((categoria) => (
+          <li key={categoria}>
+            {categoria.nome}
+          </li>
+        ))}
       </ul>
       <Link to="/">
-          Voltar para Home
+        Voltar para Home
       </Link>
     </PageDefault>
-  )
+  );
 }
 
-  export default CadastroCategoria;
+export default CadastroCategoria;
