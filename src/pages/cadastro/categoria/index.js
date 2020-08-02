@@ -3,29 +3,20 @@ import { Link } from 'react-router-dom';
 import PageDefault from '../../../components/PageDefault';
 import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
+import useForm from '../../../hooks/useForm';
+
 
 function CadastroCategoria() {
   const valoresIniciais = {
-    nome: '',
+    titulo: '',
     descricao: '',
     cor: '',
   };
+
+  const { HandlerChange, values, clearForm } = useForm(valoresIniciais);
+
   const [categorias, setCategorias] = useState([]);
-  const [values, setValues] = useState('valoresIniciais');
-
-  function setValue(chave, valor) {
-    setValues({
-      ...values,
-      [chave]: valor,
-    });
-  }
-
-  function HandlerChange(infosDoEvento) {
-    setValue(
-      infosDoEvento.target.getAttribute('name'),
-      infosDoEvento.target.value,
-    );
-  }
+  
 
   useEffect(() => {
     const URL = window.location.hostname.includes('localhost')
@@ -45,13 +36,13 @@ function CadastroCategoria() {
     //     ...categorias,
     //     {
     //       id: 1,
-    //       nome: 'Alemanha',
+    //       titulo: 'Alemanha',
     //       descricao: 'Bundesliga',
     //       cor: 'cbd1ff',
     //     },
     //     {
     //       id: 2,
-    //       nome: 'Portugal',
+    //       titulo: 'Portugal',
     //       descricao: 'Português',
     //       cor: 'cbd1ff',
     //     },
@@ -63,7 +54,7 @@ function CadastroCategoria() {
     <PageDefault>
       <h1>
         Cadastro de Campeonatos:
-        {values.nome}
+        {values.titulo}
       </h1>
 
       <form onSubmit={function handleSubmit(infosDoEvento) {
@@ -73,15 +64,16 @@ function CadastroCategoria() {
           values,
         ]);
 
-        setValues(valoresIniciais);
+        clearForm();
       }}
       >
         <FormField
           label="País"
           type="text"
-          value={values.nome}
-          name="nome"
+          value={values.titulo}
+          name="titulo"
           onChange={HandlerChange}
+          required
         />
 
         <FormField
@@ -90,6 +82,7 @@ function CadastroCategoria() {
           value={values.descricao}
           name="descricao"
           onChange={HandlerChange}
+          required
         />
 
         <FormField
@@ -98,6 +91,7 @@ function CadastroCategoria() {
           value={values.cor}
           name="cor"
           onChange={HandlerChange}
+          required
         />
 
         <Button>
@@ -113,8 +107,16 @@ function CadastroCategoria() {
 
       <ul>
         {categorias.map((categoria) => (
-          <li key={categoria}>
-            {categoria.nome}
+          <li key={`${categoria.titulo}`}>
+            <strong>Titulo</strong>
+            <p>{categoria.titulo}</p>
+
+            <strong>Descrição</strong>
+            <p>{categoria.descricao}</p>
+
+            <strong>Cor</strong>
+            <p>{categoria.cor}</p>
+
           </li>
         ))}
       </ul>

@@ -1,17 +1,179 @@
 {
-    "categorias": [
-        {
-            "id": 1,
-            "nome": "Alemanha",
-            "descricao": "Bundesliga",
-            "cor": "cbd1ff"
-        },
-        {
-            "id": 2,
-            "nome": "Portugal",
-            "descricao": "Português",
-            "cor": "cbd1ff"
-        }
-    ]
-        
+  "categorias": [
+    {
+      "id": 1,
+      "titulo": "Brasil",
+      "descricao": "Brasileirão",
+      "link": "https://www.youtube.com/watch?v=5qPuKhBa7Ag",
+      "cor": "#6BD1FF",
+      "link_extra": {
+        "text": "Brasileirão",
+        "url": "https://www.google.com/search?client=firefox-b-d&q=brasileir%C3%A3o+2020#sie=lg;/g/11fmzksb3y;2;/m/0fnk7q;mt;fp;1;;"
+      }
+    },
+    {
+      "id": 2,
+      "titulo": "Inglaterra",
+      "descricao": "Premmier League",
+      "cor": "#00C86F",
+      "link_extra": {
+        "text": "Premmier League",
+        "url": "https://pt.wikipedia.org/wiki/Premier_League_de_2020%E2%80%9321"
+      }
+    },
+    {
+      "id": 3,
+      "titulo": "Itália",
+      "descricao": "Serie A",
+      "cor": "red",
+      "link_extra": {
+        "text": "Serie A",
+        "url": "https://www.google.com/search?client=firefox-b-d&ei=WMcgX7z-F-K85OUPkNahsAQ&q=SERIE+a+ityalia&oq=SERIE+a+ityalia&gs_lcp=CgZwc3ktYWIQAzILCC4QsQMQgwEQkwIyCggAELEDEIMBEEMyBQgAELEDMgQIABBDMgQIABBDMgQIABBDMgQIABBDMgIIADICCC4yCAgAELEDEIMBOg0ILhCxAxCDARBDEJMCOgUILhCxA1CRjShY2q0oYL-wKGgAcAB4AoABqxyIAa5YkgEHNy0xLjAuM5gBAKABAaoBB2d3cy13aXrAAQE&sclient=psy-ab&ved=0ahUKEwi8ipLOnvHqAhViHrkGHRBrCEYQ4dUDCAs&uact=5#sie=lg;/g/11h02jy6ph;2;/m/03zv9;mt;fp;1;;"
+      }
+    },
+    {
+      "id": 4,
+      "titulo": "Espanha",
+      "descricao": "La Liga",
+      "cor": "orange",
+      "link_extra": {
+        "text": "La Liga",
+        "url": "https://www.google.com/search?client=firefox-b-d&q=la+liga+2020#sie=lg;/g/11ff1xzn64;2;/m/09gqx;mt;fp;1;;"
+      }
+    }
+  ],
+  "videos": [
+    {
+      "id": 1,
+      "categoriaId": 1,
+      "titulo": "Flamengo x Atlético Mineiro",
+      "url": "https://youtu.be/CWe4aUiNWLA"
+    },
+    {
+      "id": 2,
+      "categoriaId": 1,
+      "titulo": "Flamengo x Grêmio",
+      "url": "https://www.youtube.com/watch?v=HvHPafpk18k"
+    },
+    {
+      "id": 3,
+      "categoriaId": 1,
+      "titulo": "Flamengo x Palmeiras",
+      "url": "https://www.youtube.com/watch?v=4eU5q-0KfDg"
+    },
+    {
+      "id": 4,
+      "categoriaId": 1,
+      "titulo": "Flamengo x Internacional",
+      "url": "https://www.youtube.com/watch?v=RHaS4SrIstE"
+    },
+    {
+      "id": 5,
+      "categoriaId": 1,
+      "titulo": "Flamengo x Vasco",
+      "url": "https://www.youtube.com/watch?v=vdXWYfgoFMg"
+    },
+    {
+      "id": 6,
+      "categoriaId": 2,
+      "titulo": "Tottenham x Leicester",
+      "url": "https://www.youtube.com/watch?v=cXr7S1IuIIg"
+    },
+    {
+      "id": 7,
+      "categoriaId": 2,
+      "titulo": "Arsenal x Liverpool",
+      "url": "https://www.youtube.com/watch?v=37OvOAMKBmQ"
+    },
+    {
+      "id": 8,
+      "categoriaId": 2,
+      "titulo": "Machester City x Liverpool",
+      "url": "https://www.youtube.com/watch?v=sUyl8PD3BU0"
+    },
+    {
+      "id": 9,
+      "categoriaId": 2,
+      "titulo": "Manchester United x West Ham",
+      "url": "https://www.youtube.com/watch?v=ACCD69LQdcM"
+    },
+    {
+      "id": 10,
+      "categoriaId": 2,
+      "titulo": "Chelsea x Wolves",
+      "url": "https://www.youtube.com/watch?v=VZO_AImwHDk"
+    },
+    {
+      "id": 11,
+      "categoriaId": 3,
+      "titulo": "Sampdoria x Juventus",
+      "url": "https://www.youtube.com/watch?v=H7Vn6NHRqyw"
+    },
+    {
+      "id": 12,
+      "categoriaId": 3,
+      "titulo": "Juventus x Lazio",
+      "url": "https://www.youtube.com/watch?v=g5WyB9akenE"
+    },
+    {
+      "id": 13,
+      "categoriaId": 3,
+      "titulo": "Milan x Atalanta",
+      "url": "https://www.youtube.com/watch?v=LDSl4GVswRY"
+    },
+    {
+      "id": 14,
+      "categoriaId": 3,
+      "titulo": "Inter x Napoli",
+      "url": "https://www.youtube.com/watch?v=sK7NSME6iXA"
+    },
+    {
+      "id": 15,
+      "categoriaId": 3,
+      "titulo": "Roma x Fiorentina",
+      "url": "https://www.youtube.com/watch?v=aNlZfGL5z-U"
+    },
+    {
+      "id": 16,
+      "categoriaId": 4,
+      "titulo": "Real Madrid x Mallorca",
+      "url": "https://www.youtube.com/watch?v=pjZUxWb44bo"
+    },
+    {
+      "id": 17,
+      "categoriaId": 4,
+      "titulo": "Leganés x Real Madrid",
+      "url": "https://www.youtube.com/watch?v=SM606lbG2e8"
+    },
+    {
+      "id": 18,
+      "categoriaId": 4,
+      "titulo": "Atlético de Madrid x Real Sociedad",
+      "url": "https://www.youtube.com/watch?v=l3q7-vDNUIk"
+    },
+    {
+      "id": 19,
+      "categoriaId": 4,
+      "titulo": "Barcelona x Osasuna",
+      "url": "https://www.youtube.com/watch?v=339QhnpMssw"
+    },
+    {
+      "id": 20,
+      "categoriaId": 4,
+      "titulo": "Barcelona x Atlético de Madrid",
+      "url": "https://www.youtube.com/watch?v=jH4qW_QWEJI"
+    },
+    {
+      "titulo": "Flamengo x Corinthians",
+      "url": "https://www.youtube.com/watch?v=XbnU1hp_EBY",
+      "categoriaId": 1,
+      "id": 21
+    },
+    {
+      "titulo": "Real Madrid x Barcelona",
+      "url": "https://www.youtube.com/watch?v=2yisnS9T-rc",
+      "categoriaId": 4,
+      "id": 22
+    }
+  ]
 }
